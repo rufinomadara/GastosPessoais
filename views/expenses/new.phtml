@@ -1,0 +1,32 @@
+<?php require VIEWS_PATH . 'includes/header.phtml';?>
+
+<div class="container">
+    
+    <div class="col-md-12">
+        <h1>Cadastrar nova despensa</h1>
+        <hr>
+    </div>
+
+    <div class="colo-md-12">
+    <!-- manda o valor passado pelo método post para o myexpensescontroller no método "new" -->
+    <form method="post" action="<?=HOME;?>/myexpenses/new">
+              
+              <div class="form-group">
+                  <label for="exampleInputDescription" >Valor Gasto</label>  
+                  <input type="text" class="form-control" id="exampleInputPrice" placeholder= "Valor Gasto.." name="price">
+              </div>
+
+              <div class="form-group">
+                  <label for="exampleInputDescription" >Descrição</label>  
+                  <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>  
+              </div>
+
+              <button type="submit" class="btn btn-success btn-lg pull-right">Salvar Despensa</button>
+    </form>
+
+    </div>
+
+</div>  
+
+  <!-- chama o footer -->
+<?php require VIEWS_PATH . 'includes/footer.phtml';?>
