@@ -2,8 +2,9 @@
 
 namespace Code\Controller;
 
+use Code\DB\Connection;
+use Code\Entity\Expense;
 use Code\View\View;
-
 
 class MyExpensesController 
 {
@@ -23,13 +24,13 @@ class MyExpensesController
       // die;
 
       //passo o post para o $data
-      $data = $POST;
+      $data = $_POST;
 
       //pega o connection com o banco de dados para trabalhar
-      $expense = Expense(Connection::getInstance());
+      $expense = new Expense(Connection::getInstance());
       $expense->insert($data);
 
-      return header(string: 'Location: ' . HOME . '/mvexpenses');
+      return header(string: 'Location: ' . HOME . '/myexpenses');
     }
    
     $view = new View(view: 'expenses/new.phtml');

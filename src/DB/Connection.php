@@ -15,7 +15,9 @@ class Connection
       //se a minha instancia for nula, eu vou instanciar o PDO
       //if(is_null(var:self::$instance)){
       if(is_null(self::$instance)){
-        self::$instance = new \PDO('mysql:dbname=my_expenses;host=127.0.0.1', 'root', '');
+        self::$instance = new \PDO('mysql:dbname=my_expenses;host=127.0.0.1', 'root', 'madara180219');
+
+        self::$instance->setAttribute(attribute: \PDO::ATTR_ERRMODE, value:\PDO::ERRMODE_EXCEPTION);
         //trás os dados já formatados do UTF8 para não termos problemas com os caracteres especiais
         self::$instance->exec('SET NAMES UTF8');
         //self::$instance->exec(statement: 'SET NAMES UTF8'
